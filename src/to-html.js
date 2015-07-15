@@ -1,8 +1,10 @@
 module.exports = {
   name: 'toHtml',
+
   args: {
     markdown: {
-      require: true
+      example: '# Hello World',
+      required: true
     }
   },
 

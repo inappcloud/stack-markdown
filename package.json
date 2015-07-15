@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha --recursive -R dot -u tdd"
   },
   "author": "Nicolas Merouze",
   "license": "MPL-2.0",
   "dependencies": {
     "marked": "^0.3.3",
     "stack": "git://github.com/inappcloud/stack.git#master"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
   }
 }
