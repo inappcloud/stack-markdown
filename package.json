@@ -1,5 +1,5 @@
 {
-  "name": "stack-markdown",
+  "name": "@inappcloud/stack-markdown",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "license": "MPL-2.0",
   "dependencies": {
     "marked": "^0.3.3",
-    "stack": "git://github.com/inappcloud/stack.git#master"
+    "@inappcloud/stack": "git://github.com/inappcloud/stack.git#master"
   },
   "devDependencies": {
     "mocha": "^2.2.5"
