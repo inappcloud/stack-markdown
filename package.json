@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "marked": "^0.3.3",
-    "@inappcloud/stack": "git://github.com/inappcloud/stack.git#master"
+    "@inappcloud/stack": "git://github.com/inappcloud/stack.git#master",
+    "@inappcloud/stack-yaml": "git://github.com/inappcloud/stack-yaml.git#master"
   },
   "devDependencies": {
     "mocha": "^2.2.5"

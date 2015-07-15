@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'toHtml',
+  name: 'parse',
 
   args: {
     markdown: {

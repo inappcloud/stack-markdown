@@ -4,12 +4,12 @@ var markdown = require('..');
 
 var testCases = [
   {
-    name: 'toHtml',
+    name: 'parse',
     args: { markdown: '# Hello', output: 'markdown' },
     output: '<h1 id="hello">Hello</h1>\n'
   },
   {
-    name: 'toHtml#noargs',
+    name: 'parse#noargs',
     args: {},
     output: 'error'
   }
@@ -17,7 +17,7 @@ var testCases = [
 
 testCases.forEach(function(testCase) {
   test(testCase.name, function(done) {
-    markdown.toHtml({}, testCase.args).then(function(ctx) {
+    markdown.parse({}, testCase.args).then(function(ctx) {
       assert.equal(ctx.markdown, testCase.output);
       done();
     }).catch(function() {

@@ -1,4 +1,5 @@
-var pkg = require('stack').pkg;
-var toHtml = require('./src/to-html');
+var pkg = require('@inappcloud/stack').pkg;
+var parse = require('./src/parse');
+var parseWithFrontmatter = require('./src/parse-with-frontmatter');
 
-module.exports = pkg([toHtml]);
+module.exports = pkg([parse, parseWithFrontmatter]);
