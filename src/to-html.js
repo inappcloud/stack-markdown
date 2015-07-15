@@ -8,7 +8,7 @@ module.exports = {
     }
   },
 
-  call: function(ctx, args, done, error) {
+  call: function(args, done, error) {
     var marked = require('marked');
 
     marked(args.markdown, function(err, content) {
