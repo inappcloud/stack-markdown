@@ -1,11 +1,6 @@
 var assert = require('assert');
-// var suite = require('mocha').suite;
 var test = require('mocha').test;
 var markdown = require('..');
-
-function ok(expr, msg) {
-  if (!expr) throw new Error(msg);
-}
 
 test('.toHtml', function(done) {
   var testCases = [
