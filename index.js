@@ -1,5 +1,8 @@
-var pkg = require('@inappcloud/stack').pkg;
+var fn = require('@inappcloud/stack').fn;
 var parse = require('./src/parse');
 var parseWithFrontmatter = require('./src/parse-with-frontmatter');
 
-module.exports = pkg([parse, parseWithFrontmatter]);
+module.exports = {
+  parse: fn(parse),
+  parseWithFrontmatter: fn(parseWithFrontmatter)
+};

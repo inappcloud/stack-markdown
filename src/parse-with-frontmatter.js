@@ -1,25 +1,29 @@
 module.exports = {
   name: 'parseWithFrontmatter',
+
   args: {
     markdown: {
-      example: 'title: Hello World\n---\n# Hello World',
+      example: '---\ntitle: Hello World\n---\n# Hello World',
       required: true
     }
   },
 
-  call: function(args, done, error) {
-    var markdown = require('..');
-    var yaml = require('@inappcloud/stack-yaml');
+  call: function(args, done) {
+    var parseMd = require('..').parse;
+    var parseYaml = require('@inappcloud/stack-yaml').parse;
     var rFrontMatter = /^(-{3,}|;{3,})\n([\s\S]+?)\n\1(?:$|\n([\s\S]*)$)/;
+    var result = { frontmatter: null, content: null };
 
     var match = args.markdown.match(rFrontMatter);
 
-    yaml.parse({}, { yaml: match[2], output: 'yaml' }).then(function(c) {
-      return markdown.parse(c, { markdown: (match[3] || ''), output: 'markdown' });
-    }).then(function(c) {
-      done({ frontmatter: c.yaml, content: c.markdown });
+    parseYaml({ yaml: match[2] }).then(function(v) {
+      result.frontmatter = v;
+      return parseMd({ markdown: (match[3] || '') });
+    }).then(function(v) {
+      result.content = v;
+      done(result);
     }).catch(function(err) {
-      error(err);
+      done(err);
     });
   }
 };

@@ -8,12 +8,12 @@ module.exports = {
     }
   },
 
-  call: function(args, done, error) {
+  call: function(args, done) {
     var marked = require('marked');
 
     marked(args.markdown, function(err, content) {
       if (err) {
-        error(err);
+        done(err);
       } else {
         done(content);
       }
